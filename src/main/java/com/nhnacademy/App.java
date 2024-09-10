@@ -15,6 +15,8 @@ package com.nhnacademy;
 import com.nhnacademy.thread.CounterHandler;
 import lombok.extern.slf4j.Slf4j;
 
+import java.util.concurrent.ThreadLocalRandom;
+
 @Slf4j
 public class App
 {
@@ -46,7 +48,18 @@ public class App
 
         //TODO#1 - main Thread 에서 3초 후  threadA에 interrupt 예외를 발생 시킴 니다.
 
+
+        try{
+            Thread.sleep(3000);
+            threadA.interrupt();
+        }catch (InterruptedException e){
+            System.out.println("threadA 종료");
+        }
+
         //TODO#3 Main Thread가 threadA, ThreadB가 종료될 때 까지 대기 합니다. Thread.yield를 사용 합니다.
+        while(threadA.getState() != Thread.State.TERMINATED || threadB.getState() != Thread.State.TERMINATED){
+            Thread.yield();
+        }
 
         //threadA, threadB 상태를 출력 합니다.
         log.debug("threadA-status:{}",threadA.getState());
