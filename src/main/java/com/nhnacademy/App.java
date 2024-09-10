@@ -27,8 +27,6 @@ public class App
         //TODO#6 thread의 name을 my-counter로 설정 합니다.
 
         thread.setName("my-counter");
-        System.out.println(thread.getName());
-
 
         //TODO#7 thread를 시작 합니다.
 
