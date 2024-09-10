@@ -22,6 +22,7 @@ public class App
 {
     public static void main( String[] args ){
 
+
         //TODO#6 현재 실행되고 있는 main thread의 이름을 my-thread로 설정 합니다.
         //참고.main thread : Thread.currentThread()
         Thread main = Thread.currentThread();
