@@ -29,7 +29,7 @@ public class SharedCounter {
         }
         this.count = count;
         //TODO#1-1 semaphore를 생성 합니다.( 동시에 하나의 Thread만 접근할 수 있습니다. ), permits prameter를 확인하세요.
-        semaphore = new Semaphore(1, false);
+        semaphore = new Semaphore(1, true);
     }
 
     public long getCount(){
